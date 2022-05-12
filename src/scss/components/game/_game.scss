@@ -11,6 +11,8 @@
 		&-wrapper {
 			border-radius: 0.75em;
 			overflow: hidden;
+			-webkit-border-radius: 0.75em;
+			-webkit-transform: translateZ(0);
 		}
 	}
 
