@@ -1,0 +1,24 @@
+// Game tabs styles
+.games-tabs {
+	&__navigation {
+		margin-bottom: 1.5em;
+	}
+
+	&__games {
+		display: grid;
+		justify-content: space-between;
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+		grid-gap: 15px;
+		position: relative;
+		opacity: 1;
+		@include animate(opacity);
+	}
+
+	&__spinner {
+		margin-top: 5em;
+
+		.spinner__element {
+			border-color: var(--dark-blue) transparent transparent transparent;
+		}
+	}
+}

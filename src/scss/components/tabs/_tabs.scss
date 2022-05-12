@@ -1,0 +1,36 @@
+// Tabs styles
+.tabs {
+	background: var(--white);
+	border-radius: 10px;
+	box-shadow: 0 0 1px 10px var(--grey);
+	display: flex;
+	justify-content: space-between;
+	padding: 0;
+	list-style: none;
+	overflow: auto;
+
+	&__link {
+		display: table-cell;
+		color: var(--dark-blue);
+		padding: 1em;
+		font-size: 1.1em;
+		text-align: center;
+		width: 100%;
+		cursor: pointer;
+		background: linear-gradient(to top, var(--white) 50%, var(--dark-blue) 50%) bottom;
+		background-size: auto 202%;
+		border-right: 1px solid #dddd;
+		align-items: stretch;
+		white-space: nowrap;
+		@include animate(all, .2s, ease-out);
+
+		&:last-child {
+			border: 0;
+		}
+
+		&.active, &:hover {
+			background-position: top;
+			color: var(--white);
+		}
+	}
+}

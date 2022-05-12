@@ -1,0 +1,28 @@
+// Game styles
+.game {
+	$game: &;
+	cursor: pointer;
+
+	&__image {
+		display: block;
+		width: 100%;
+		@include animate();
+
+		&-wrapper {
+			border-radius: 0.75em;
+			overflow: hidden;
+		}
+	}
+
+	&__title {
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	&:hover {
+		#{$game}__image {
+			@include scale(1.1);
+			opacity: .8;
+		}
+	}
+}

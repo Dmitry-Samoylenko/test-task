@@ -1,0 +1,39 @@
+/// Animate css properties
+$animation-speed: .3s !default;
+
+@mixin animate($properties: all, $duration: $animation-speed, $easing: ease) {
+	$list: ();
+	@each $prop in $properties {
+		$str: #{$prop} #{$duration} #{$easing};
+		$list: append($list, $str, comma);
+	}
+	-webkit-transition: $list;
+	-moz-transition: $list;
+	-o-transition: $list;
+	-ms-transition: $list;
+	transition: $list;
+}
+
+// Transform css properties
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+	@include transform(translate($x, $y));
+}

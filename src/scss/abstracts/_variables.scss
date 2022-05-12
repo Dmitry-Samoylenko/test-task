@@ -1,0 +1,74 @@
+// Font
+$fonts: (
+	"roboto": unquote('"Roboto", Arial, Geneva, sans-serif'),
+);
+
+// Color
+$colors: (
+	"white": #ffffff,
+	"black": #000000,
+	"dark-grey": #242424,
+	"dark-blue": #252c36,
+	"blue": #41b6e6,
+	"dark-green": #1d252d,
+	"grey": #f4f5f5,
+);
+
+// Base
+$base: (
+	"font": map-get($fonts, "roboto"),
+	"mobile-font-size": 17px,
+	"desktop-font-size": 19px,
+	"color": map-get($colors, "white"),
+	"background": map-get($colors, "dark-grey"),
+);
+
+// Breakpoints for include media
+$breakpoints: (
+	"phone": 320px,
+	"tablet": 768px,
+	"desktop": 1024px,
+	"widescreen": 1200px,
+);
+
+// Layout sizes
+$layout-sizes: (
+	"max-width": 1366px,
+	"aside-width": 320px,
+);
+
+// CSS variables
+:root {
+	--white: #{map-get($colors, "white")};
+	--black: #{map-get($colors, "black")};
+	--dark-grey: #{map-get($colors, "dark-grey")};
+	--dark-green: #{map-get($colors, "dark-green")};
+	--dark-blue: #{map-get($colors, "dark-blue")};
+	--blue: #{map-get($colors, "blue")};
+	--grey: #{map-get($colors, "grey")};
+	--base-font: #{map-get($base, "font")};
+	--base-color: #{map-get($base, "color")};
+	--base-background: #{map-get($base, "background")};
+	--layout-max-widrh: #{map-get($layout-sizes, "max-width")};
+	--aside-width: #{map-get($layout-sizes, "aside-width")};
+
+	// Mobile styles
+	--base-font-size: #{map-get($base, "mobile-font-size")};
+	--display-mobile-blocks: block;
+	--content-width: 100%;
+	--content-margin: 0;
+	--aside-left-position: calc(var(--aside-width) * -1);
+	--menu-background-visibility: visible;
+	--menu-background-opacity: 1;
+}
+
+// CSS variables for desktop
+body.desktop {
+	--base-font-size: #{map-get($base, "desktop-font-size")};
+	--display-mobile-blocks: none;
+	--content-width: calc(100% - var(--aside-width));
+	--content-margin: var(--aside-width);
+	--aside-left-position: 0;
+	--menu-background-visibility: hidden;
+	--menu-background-opacity: 0;
+}

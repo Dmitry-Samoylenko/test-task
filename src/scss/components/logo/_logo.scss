@@ -1,0 +1,12 @@
+// Logo styles
+.logo {
+	&__link {
+		display: block;
+		height: 100%;
+	}
+
+	&__image {
+		max-width: 100%;
+		height: 100%;
+	}
+}

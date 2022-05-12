@@ -1,0 +1,12 @@
+// Header styles
+.header {
+	padding: 15px;
+	background: var(--dark-blue);
+	display: flex;
+	height: 3em;
+
+	&__logo {
+		padding: 0 15px;
+		margin: 0 auto;
+	}
+}

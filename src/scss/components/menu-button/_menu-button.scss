@@ -1,0 +1,41 @@
+// Menu burger button styles
+.menu-button {
+	$menu-button: &;
+	width: 25px;
+	height: 20px;
+	position: relative;
+	cursor: pointer;
+	display: var(--display-mobile-blocks);
+
+	&__line {
+		width: 100%;
+		height: 2px;
+		background: var(--white);
+		border-radius: 10px;
+		@include animate();
+
+		&:not(:last-child)
+		{
+			margin-bottom: 7px;
+		}
+	}
+
+	&.menu_visible {
+		#{$menu-button}__line {
+			position: absolute;
+			top: 8px;
+
+			&:first-child {
+				@include rotate(-45);
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+
+			&:last-child {
+				@include rotate(45);
+			}
+		}
+	}
+}

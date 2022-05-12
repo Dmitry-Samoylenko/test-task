@@ -1,0 +1,39 @@
+{
+	"name": "test-task",
+	"version": "1.0.0",
+	"description": "Test task for the BetVictor company.",
+	"author": "Dmitry Samoylenko",
+	"main": "",
+	"scripts": {
+		"build": "npm run build:css && npm run build:js",
+		"build:dev": "npm run watch:css && npm run watch:js",
+		"build:css": "npx rimraf dist/css/*.css && npm run lint:css:fix && npx node-sass src/scss/app.scss dist/css/main.min.css --output-style=compressed",
+		"watch:css": "npx node-sass src/scss/app.scss dist/css/main.min.css --watch",
+		"build:js": "npx rimraf dist/js/*.js && npm run lint:js:fix && webpack && terser --compress --mangle --output dist/js/main.min.js -- dist/js/main.min.js",
+		"watch:js": "npx babel src/js/main.js --out-file dist/js/main.min.js --no-comments --minified --presets=@babel/preset-env --watch",
+		"lint:js": "npx eslint src/js/**/*.js",
+		"lint:js:fix": "npx eslint src/js/**/*.js --fix",
+		"lint:css": "npx stylelint src/scss/**/*.scss",
+		"lint:css:fix": "npx stylelint src/scss/**/*.scss --fix",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.13.16",
+		"@babel/core": "^7.14.2",
+		"@babel/preset-env": "^7.14.2",
+		"babel-loader": "^8.0.5",
+		"webpack": "^4.29.3",
+		"webpack-cli": "^3.2.3",
+		"@fullhuman/postcss-purgecss": "^4.0.3",
+		"autoprefixer": "^10.2.5",
+		"eslint": "^7.26.0",
+		"node-sass": "^7.0.1",
+		"postcss": "^8.2.15",
+		"postcss-cli": "^8.3.1",
+		"rimraf": "^3.0.2",
+		"stylelint": "^13.13.1",
+		"stylelint-config-recommended-scss": "^4.2.0",
+		"stylelint-scss": "^3.19.0",
+		"terser": "^5.7.0"
+	}
+}

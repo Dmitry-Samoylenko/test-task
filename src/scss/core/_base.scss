@@ -1,0 +1,17 @@
+// Base styles
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	font: var(--base-font-size) var(--base-font);
+	color: var(--base-color);
+	background: var(--base-background);
+	overflow: visible;
+}
+
+a {
+	color: var(--white);
+	text-decoration: none;
+}
